@@ -1,4 +1,5 @@
-<h2 align="center">Courier Management System</h2>
+## Courier Management System
+
 <img align="right" src="__images/readme.gif" alt="png" width=150 height=150>
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![Version](https://img.shields.io/badge/version-1.0.0-green)]()
