@@ -1,5 +1,5 @@
-<h2 align="center">Welcome to Courier Management System</h2>
-<img align="right" src="https://p1.hiclipart.com/preview/1013/825/96/warehouse-thirdparty-logistics-freight-transport-delivery-service-business-truckload-shipping-courier-png-clipart.jpg" alt="png">
+<h2 align="center">Courier Management System</h2>
+<img align="right" src="__images/readme.gif" alt="png" width=150 height=150>
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![Version](https://img.shields.io/badge/version-1.0.0-green)]()
 [![Issues](https://img.shields.io/github/issues-raw/GSri30/CourierManagementProject)](https://github.com/GSri30/CourierManagementProject/issues)
@@ -49,11 +49,9 @@ python3 manage.py runserver
 ```
 
 ## 👤 Contributors
-
- **Contributors**
 <table>
   <tr>
-    <td align="center"><a href=""><img src="" width="100px;" alt=""/></td>
+    <!-- <td align="center"><a href=""><img src="" width="100px;" alt=""/></td> -->
   </tr>
 </table>
 
