@@ -1,13 +1,12 @@
 ## Courier Management System
 
-<img align="right" src="__images/readme.gif" alt="png" width=150 height=150>
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-[![Version](https://img.shields.io/badge/version-1.0.0-green)]()
+[![Version](https://img.shields.io/badge/version-1.0.0-green)]("#")
 [![Issues](https://img.shields.io/github/issues-raw/GSri30/CourierManagementProject)](https://github.com/GSri30/CourierManagementProject/issues)
 [![Closed Issues](https://img.shields.io/github/issues-closed-raw/GSri30/CourierManagementProject)](https://github.com/GSri30/CourierManagementProject/issues)
-[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)]() 
-[![Pull Requests](https://img.shields.io/github/issues-pr/GSri30/CourierManagementProject)]()
-[![Contributors](https://img.shields.io/github/contributors/GSri30/CourierManagementProject)]()
+[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)]("#") 
+[![Pull Requests](https://img.shields.io/github/issues-pr/GSri30/CourierManagementProject)]("#")
+[![Contributors](https://img.shields.io/github/contributors/GSri30/CourierManagementProject)]("#")
 
 
 > The main aim of this project is to allow students to know about their couriers from any place. The project uses discord-webhooks to notify about the courier details.
