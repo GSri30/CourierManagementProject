@@ -34,7 +34,7 @@ pipenv shell
 pipenv install --dev
 ```
 4.Create a .env file inside "CourierManagement" folder and store the webhook url and django project secret key.
-(For webhook url, create a discord channel and install a webhook into it and for secret key, use the "generate_secret.py" to get a random key or use secret.txt)
+(For webhook url, create a discord channel and install a webhook into it and for secret key, use the "generate_secret.py" to get a random key or use <a href="https://raw.githubusercontent.com/GSri30/CourierManagementProject/main/secret.txt?token=ANBXICVSZEW7AJV6QSB2ISC75ZXMO">secret.txt</a>)
 ```sh
 cd CourierManagement
 echo WEBHOOK_URL="your url" >> .env
