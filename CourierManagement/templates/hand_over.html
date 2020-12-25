@@ -1,0 +1,47 @@
+{% extends "base.html" %} 
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container justify-content-center align-items-center mt-3">
+        <div style="margin-left:30%">
+            {% if existing_post.FromName %}<p class="card-text">From : {{ existing_post.FromName }}</p>
+            {% else %}<p class="card-text">From : N/A</p>{% endif %}
+            {% if existing_post.CourierId %}<p class="card-text">Courier Id : {{ existing_post.CourierId }}</p>
+            {% else %}<p class="card-text">Courier Id : N/A</p>{% endif %}
+            {% if existing_post.PODnumber %}<p class="card-text">POD Number : {{ existing_post.PODnumber }}</p>
+            {% else %}<p class="card-text">POD Number : N/A</p>{% endif %}
+            {% if existing_post.StudentName %}<p class="card-text">Student Name : {{ existing_post.StudentName }}</p>
+            {% else %}<p class="card-text">Student Name : N/A</p>{% endif %}
+            {% if existing_post.Received_On %}<p class="card-text">Received Date and Time : {{ existing_post.Received_On }}</p>
+            {% else %}<p class="card-text">Received Date and Time : N/A</p>{% endif %}
+        </div>
+        <p></p>
+        <form action="" method="post">
+            <div style="margin-left:30%">
+                {% csrf_token %}                
+                <div class="form-row">
+                    <div class="form-group col-md-4 mb-0">
+                        {{updated_post.RollNumber|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md-4 mb-0">
+                        {{updated_post.Mobile|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8 mb-0">
+                        {{updated_post.Email|as_crispy_field}} 
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8 mb-0">
+                        {{updated_post.OtherInformation|as_crispy_field}}
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button onclick="window.location.href='/'" class="btn btn-secondary">Cancel</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

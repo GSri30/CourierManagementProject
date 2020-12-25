@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="d-flex align-content-center justify-content-center">
+        {% if messages%}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <div class="alert alert-{{ message.tags }}" style="text-align: center;width: 60vw;">{{ message }}</div>
+                {% else %}
+                    <script>
+                        while(!confirm("Courier Id : "+"{{message}}"));
+                    </script>
+                {% endif %}
+            {% endfor %}
+    {% endif %}
+    </div>
+
+   <div class="home-outer">
+        <div class="home-inner">
+            <button class="btn btn-secondary btn-circle btn-xl" onclick="window.location.href='add'"><i class="fa fa-plus"></i></button>
+            <button class="btn btn-secondary btn-circle btn-xl" onclick="window.location.href='search'"><i class="fa fa-search"></i></button>&nbsp;&nbsp;&nbsp;
+        </div>
+   </div>
+{% endblock content %}

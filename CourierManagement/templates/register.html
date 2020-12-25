@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center container" style="margin-top:2%;">
+        <form action="" method="post">
+            <div class="justify-content-center align-items-center">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary">Register</button>
+                <button onclick="window.location.href='/'" class="btn btn-secondary">Cancel</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

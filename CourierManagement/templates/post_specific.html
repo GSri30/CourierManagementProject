@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="information d-flex justify-content-center align-items-center">
+            <div class="row">
+                <div class="col-md-12 card mb-4  mt-3 left">
+                <div class="card-body">
+                    {% if post.FromName %}<p class="card-text">From : {{ post.FromName }}</p>
+                    {% else %}<p class="card-text">From : N/A</p>{% endif %}
+                    {% if post.CourierId %}<p class="card-text">Courier Id : {{ post.CourierId }}</p>
+                    {% else %}<p class="card-text">Courier Id : N/A</p>{% endif %}
+                    {% if post.PODnumber %}<p class="card-text">POD Number : {{ post.PODnumber }}</p>
+                    {% else %}<p class="card-text">POD Number : N/A</p>{% endif %}
+                    {% if post.StudentName %}<p class="card-text">Student Name : {{ post.StudentName }}</p>
+                    {% else %}<p class="card-text">Student Name : N/A</p>{% endif %}
+                    {% if post.RollNumber %}<p class="card-text">Student Roll Number : {{ post.RollNumber }}</p>
+                    {% else %}<p class="card-text">Student Roll Number : N/A</p>{% endif %}
+                    {% if post.Email %}<p class="card-text">Email : {{ post.Email }}</p>
+                    {% else %}<p class="card-text">Email : N/A</p>{% endif %}
+                    {% if post.Mobile %}<p class="card-text">Mobile : {{ post.Mobile }}</p>
+                    {% else %}<p class="card-text">Mobile : N/A</p>{% endif %}
+                    {% if post.Received_On %}<p class="card-text">Received Date and Time : {{ post.Received_On }}</p>
+                    {% else %}<p class="card-text">Received Date and Time : N/A</p>{% endif %}
+                    {% if post.Collected %}<p class="card-text">Status : Collected on {{ post.Collected_On }}</p>
+                    {% else %}<p class="card-text">Status : Pending</p>{% endif %}
+                    {% if post.OtherInformation %}<p class="card-text">Other Information : {{ post.OtherInformation }}</p>
+                    {% else %}<p class="card-text">Other Information : Nill</p>{% endif %}
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons d-flex justify-content-center">
+            {% if post.Collected %}
+            {% else %}<button class="btn btn-success" onclick="window.location.href='{{ post.CourierId }}/handover'">Collected</button>&nbsp;&nbsp;{% endif %}
+            <button class="btn btn-secondary" onclick="window.location.href='{{ post.CourierId }}/edit/'">Edit</button>&nbsp;&nbsp;
+            <button class="delete btn btn-danger" data-confirm="Are you sure to delete this item?" href='{{ post.CourierId }}/delete/'>Delete</button>
+        </div>
+    </div>
+<script src="/static/js/delete-alert.js"></script>
+{% endblock content %}

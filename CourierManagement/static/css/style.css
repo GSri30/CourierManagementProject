@@ -1,0 +1,17 @@
+/*-----index.html-----*/
+.home-outer{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 90vh;
+}
+.btn-circle.btn-xl {
+    width: 140px;
+    height: 140px;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+/*----------*/

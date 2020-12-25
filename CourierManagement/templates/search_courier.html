@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container justify-content-center">
+        {% if messages %}
+            <div style="text-align: center;width: 60vw;">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+            </div>
+        {% endif %}
+        <div><form action="" method="get" class="form-inline  md-form form-sm active-cyan-2 mt-2">
+                <input type="text" placeholder="Search" name="q" id="search" onkeyup="searchInput(this)" class="form-control form-control-sm mr-3 w-75">
+                <i class="fa fa-search"></i>
+        </form></div>
+        
+        <div class="row">
+            <div class="col-md-8 mt-3 left" id="couriers">
+                {% for post in post_list %}
+                    {% if post.Collected%}
+                        <div class="card mb-4" style="width: 60vw">
+                            <div class="card-body">
+                                <h3 class="card-title"><a href="{% url 'specific' post.CourierId %}">{{ post.FromName }}</a></h3>
+                                <p class="card-text text-muted h6">#{{post.CourierId}} | {{ post.StudentName }} | <mark style="color:green">Collected</mark> | Received On : {{ post.Received_On}} </p>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="card mb-4" style="width:60vw">
+                            <div class="card-body">
+                                <h3 class="card-title"><a href="{% url 'specific' post.CourierId %}">{{ post.FromName }}</a></h3>
+                                <p class="card-text text-muted h6">#{{post.CourierId}} | {{ post.StudentName }} | <mark style="color:red" inline>Pending</mark> | Received On : {{ post.Received_On}} </p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div style="display:none;">
+                        <p>{{post.FromName}}</p>
+                        <p>{{post.CourierId}}</p>
+                        <p>{{post.StudentName}}</p>
+                        <p>{{post.Email}}</p>
+                        <p>{{post.Mobile}}</p>
+                        <p>{{post.PODnumber}}</p>
+                        <p>{{post.Received_On}}</p>
+                        <p>{{post.OtherInformation}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>   
+        
+        <div id="no-results">
+            <h4 class="text-muted">No Results</h4>
+        </div>
+    </div>
+<script src="/static/js/search.js"></script>
+{% endblock content %}

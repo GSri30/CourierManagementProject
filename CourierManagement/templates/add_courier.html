@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center container" style="margin-top:2%;">
+        <form action="" method="post">
+            <div class="justify-content-center align-items-center">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.FromName|as_crispy_field}}                
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.PODnumber|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.StudentName|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.RollNumber|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.Email|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.Mobile|as_crispy_field}}
+                    </div>
+                </div>
+                <div>
+                    {{form.OtherInformation|as_crispy_field}}
+                <div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <input type="button" onclick="window.location.href='/'" class="btn btn-secondary" value="Cancel">
+            </div>
+        </form>
+    </div>
+{% endblock content %}
