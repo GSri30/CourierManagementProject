@@ -66,7 +66,7 @@ python3 manage.py runserver
 <!-- ## 👤 Contributors
 <table>
   <tr>
-    <!-- <td align="center"><a href=""><img src="" width="100px;" alt=""/></td> -->
+    <td align="center"><a href=""><img src="" width="100px;" alt=""/></td>
   </tr>
 </table> -->
 
