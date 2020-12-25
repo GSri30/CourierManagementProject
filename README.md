@@ -33,10 +33,20 @@ cd CourierManagementProject
 pipenv shell
 pipenv install --dev
 ```
-4.Start the <a href="http://127.0.0.1:8000/">localhost</a> server
-
+4.Create a .env file inside "CourierManagement" folder and store the webhook url and django project secret key.
+(For webhook url, create a discord channel and install a webhook into it and for secret key, use the "generate_secret.py" to get a random key or use secret.txt)
 ```sh
 cd CourierManagement
+echo WEBHOOK_URL="your url" >> .env
+echo SECRET_KEY="your key" >> .env
+```
+
+
+5.Start the <a href="http://127.0.0.1:8000/">localhost</a> server
+
+```sh
+python3 manage.py makemigrations
+python3 manage.py migrate
 python3 manage.py runserver
 ```
 
@@ -46,17 +56,19 @@ Alternatively, you can use the <a href="https://raw.githubusercontent.com/GSri30
 ## 🖮 Usage
 
 ```sh
+python3 manage.py makemigrations
+python3 manage.py migrate
 python3 manage.py runserver
 ```
 
-## 👤 Contributors
+<!--!Disabled-->
+<!--Edit this section after making contributions. Only PRs of contributors will be merged!-->
+<!-- ## 👤 Contributors
 <table>
   <tr>
     <!-- <td align="center"><a href=""><img src="" width="100px;" alt=""/></td> -->
   </tr>
-</table>
-
-<!--Edit this section after making contributions. Only PRs of contributors will be merged!-->
+</table> -->
 
 ## 🤝 Contributing
 
