@@ -3,7 +3,7 @@ from django.db import models
 
 class Post(models.Model):
     CourierId=models.AutoField(primary_key=True)
-    MessageId=models.CharField(max_length=100)
+    Notified=models.BooleanField(default=False,null=True,blank=True)
     FromName=models.CharField(max_length=100)
     StudentName=models.CharField(max_length=50)
     Email=models.CharField(max_length=50,null=True,blank=True)
@@ -20,12 +20,12 @@ class Post(models.Model):
     
     def __str__(self):
         return f"{self.CourierId} {self.StudentName}"
-    
+
     def getCourierId(self):
         return f"{self.CourierId}"
     
-    def getMessageId(self):
-        return f"{self.MessageId}"
+    def getNotified(self):
+        return f"{self.Notified}"
     
     def getFromName(self):
         return f"{self.FromName}"

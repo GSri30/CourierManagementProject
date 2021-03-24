@@ -14,21 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-import Courier.views 
-import users.views
+from django.urls import path,include
+from . import views
+from users.views import LoginView,LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',Courier.views.Home.as_view(),name='home'),
-    path('add/',Courier.views.AddCourier,name='add'),
-    path('search/',Courier.views.SearchCourier.as_view(),name='search'),
-    path('search/<slug:pk>',Courier.views.PostSpecific.as_view(),name='specific'),
-    path('search/<slug:pk>/edit/',Courier.views.EditCourier,name='edit'),
-    path('search/<slug:pk>/handover/',Courier.views.HandOver,name='handover'),
-    path('search/<slug:pk>/delete/',Courier.views.DeleteCourier,name='delete'),
-    #...users...
-    path('login/',users.views.LoginView,name='login'),
-    path('register/',users.views.RegisterView,name='register'),
-    path('logout/',users.views.LogoutView,name='logout')
+    path('login/',LoginView,name='login'),
+    path('logout/',LogoutView,name='logout'),
+    path('',include('Courier.urls')),
+    path('api/', views.api_root, name='APIhome'),
+    path('api/',include('DispatchAPI.urls')),
+    path('api/',include('users.urls')),
+    path('api-auth/',include('rest_framework.urls',namespace='rest_framework')),
 ]

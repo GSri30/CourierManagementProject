@@ -5,7 +5,9 @@
         {% if messages%}
             {% for message in messages %}
                 {% if message.tags == 'success' %}
-                    <div class="alert alert-{{ message.tags }}" style="text-align: center;width: 60vw;">{{ message }}</div>
+                    <div class="alert alert-{{ message.tags }}" style="text-align: center;width: 55vw;">{{ message }}</div>
+                {% elif message.tags == 'warning' %}
+                    <div class="alert alert-{{ message.tags }}" style="text-align: center;width: 55vw;">{{ message }}</div>
                 {% else %}
                     <script>
                         while(!confirm("Courier Id : "+"{{message}}"));

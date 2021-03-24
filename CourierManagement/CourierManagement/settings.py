@@ -17,6 +17,8 @@ from dotenv import load_dotenv
 # Secret Key import
 load_dotenv()
 secret_key=os.getenv("SECRET_KEY")
+EMAIL_SENDER=os.getenv("EMAIL_SENDER")
+EMAIL_SENDER_PASSWORD=os.getenv("EMAIL_SENDER_PASSWORD")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -45,8 +47,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Courier',
-    'users',
     'crispy_forms',
+    #API
+    'users',
+    'DispatchAPI',
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -137,3 +143,25 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_URL="login"
 LOGIN_REDIRECT_URL="home"
+
+# Abstract User in users
+AUTH_USER_MODEL="users.AppUser"
+
+# Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = EMAIL_SENDER
+EMAIL_HOST_PASSWORD = EMAIL_SENDER_PASSWORD
+
+# Mappings limitation
+MAX_CHILD_MAILS = 5
+MAX_CHILD_MOBILE_NUMBERS = 5
+
+# Password length for verification url
+PASS_LENGTH = 30
+
+# Prefix to differentiate mapping type
+MAIL_PREFIX = 'mail'
+MOBILE_PREFIX = 'mobile'
